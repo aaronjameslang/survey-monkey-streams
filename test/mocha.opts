@@ -1,0 +1,2 @@
+--require=dotenv/config
+--timeout=10000
