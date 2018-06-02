@@ -1,4 +1,4 @@
-import request from "request";
+import request, {Options as RequestOptions} from "request";
 import {Readable, ReadableOptions} from "stream";
 
 class Reader extends Readable {
@@ -24,7 +24,7 @@ class Reader extends Readable {
      *   highWaterMark: 5000
      * })
      */
-    constructor(requestOptions: request.Options, readableOptions: ReadableOptions = {}) {
+    constructor(requestOptions: RequestOptions, readableOptions: ReadableOptions = {}) {
         super({ ...readableOptions, objectMode: true});
         this.request = request.defaults({
             ...requestOptions,
@@ -68,4 +68,8 @@ class Reader extends Readable {
 }
 
 export default Reader;
-export { Reader };
+export {
+    Reader,
+    ReadableOptions,
+    RequestOptions,
+};

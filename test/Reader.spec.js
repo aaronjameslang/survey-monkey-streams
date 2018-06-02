@@ -1,5 +1,4 @@
 const Reader = require('../dist').Reader
-const assert = require('assert')
 const snapshot = require('snap-shot-it')
 
 const TOKEN = process.env.SURVEY_MONKEY_TOKEN
