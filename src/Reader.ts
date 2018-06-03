@@ -46,24 +46,25 @@ class Reader extends Readable {
             {qs: {page: this.page + 1}},
             (error: Error, reponse: request.Response, body: any) => {
                 if (error || body.error) {
-               process.nextTick(() => this.emit("error", error || body.error));
-               return;
-           }
+                    process.nextTick(() => this.emit("error", error || body.error));
+                    return;
+                }
                 this.page = body.page;
                 this.total = body.total;
                 let more = true; // Initialise as true, in case data is empty
                 body.data.forEach((datum: object) => {
-                more = this.push(datum);
-            });
+                    more = this.push(datum);
+                });
                 this.semaphore += 1;
                 if (!body.links.next) {
-                this.push(null);
-                return;
-            }
+                    this.push(null);
+                    return;
+                }
                 if (more) {
-                this._read();
-            }
-        });
+                    this._read();
+                }
+            },
+        );
     }
 }
 

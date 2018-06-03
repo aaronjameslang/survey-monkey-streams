@@ -17,6 +17,7 @@ describe('SurveysReader', function () {
       data.push(d)
     })
     reader.on('end', function () {
+      assert.equal(data.length, 4)
       snapshot(data)
       done()
     })
