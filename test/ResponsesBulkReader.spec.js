@@ -1,13 +1,13 @@
-const SurveysReader = require('../dist').SurveysReader
+const ResponsesBulkReader = require('../dist/ResponsesBulkReader').default
 const assert = require('assert')
 const snapshot = require('snap-shot-it')
 
 const TOKEN = process.env.SURVEY_MONKEY_TOKEN
 assert(TOKEN)
 
-describe('SurveysReader', function () {
-  it('should read surveys', function (done) {
-    const reader = new SurveysReader({
+describe('ResponsesBulkReader', function () {
+  it('should read responses', function (done) {
+    const reader = new ResponsesBulkReader(152299598, {
       headers: {
         authorization: 'bearer ' + TOKEN
       }

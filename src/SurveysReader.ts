@@ -2,7 +2,7 @@ import Reader, { ReadableOptions, RequestOptions } from "./Reader";
 
 class SurveysReader extends Reader {
     /**
-     * @example new Reader({
+     * @example new SurveysReader({
      *   headers: { authorization: 'bearer xxxxx.yyyyy.zzzzz' }
      * })
      */
