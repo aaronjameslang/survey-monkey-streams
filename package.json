@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "posttest": "tslint --project . && eslint .",
-    "pretest": "tslint --project . --fix ; eslint . --fix ; barrelsby --directory src --delete ; tsc",
+    "pretest": "tslint --project . --fix ; eslint . --fix ; barrelsby --directory src --delete && rm -rf dist && tsc",
     "test": "mocha"
   },
   "dependencies": {
