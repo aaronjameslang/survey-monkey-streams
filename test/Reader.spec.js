@@ -49,6 +49,9 @@ describe("Reader", () => {
     reader.on("page", ({ page }) => {
       data.push({ page });
     });
+    reader.on("progress", progress => {
+      data.push({ progress });
+    });
     reader.on("end", () => {
       snapshot(data);
       done();

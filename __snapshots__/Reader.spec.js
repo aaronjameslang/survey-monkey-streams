@@ -1526,6 +1526,12 @@ exports['Reader should read multiple pages 1'] = [
     "metadata": {}
   },
   {
+    "progress": {
+      "count": 10,
+      "total": 16
+    }
+  },
+  {
     "page": 2
   },
   {
@@ -2337,6 +2343,12 @@ exports['Reader should read multiple pages 1'] = [
     "collection_mode": "data_entry",
     "edit_url": "https://www.surveymonkey.com/r/?sm=f_2BIAysLYyq7XuWMOsLdCX47agznLWsi67BBR6rcXlKib1SmC9SfJZD3FPr0FCQu9",
     "metadata": {}
+  },
+  {
+    "progress": {
+      "count": 20,
+      "total": 16
+    }
   }
 ]
 
