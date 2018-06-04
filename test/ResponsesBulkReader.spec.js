@@ -1,4 +1,4 @@
-const ResponsesBulkReader = require("../dist/ResponsesBulkReader").default;
+const ResponsesBulkReader = require("../dist/npm/ResponsesBulkReader").default;
 const snap = require("./snap-events");
 
 const TOKEN = process.env.SURVEY_MONKEY_TOKEN;

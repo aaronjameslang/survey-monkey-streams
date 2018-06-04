@@ -1,4 +1,4 @@
-const ResponsesBulkReader = require("../dist/SurveysResponsesBulkReader")
+const ResponsesBulkReader = require("../dist/npm/SurveysResponsesBulkReader")
   .default;
 const snap = require("./snap-events");
 

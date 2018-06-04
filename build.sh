@@ -10,3 +10,7 @@ tsc # Compile
 mocha # Test
 tslint --project . # Lint ts
 eslint           . # lint js
+typedoc --out ./dist/doc --mode file
+cp package.json ./dist/npm/
+npm pack ./dist/npm
+mv *.tgz ./dist/

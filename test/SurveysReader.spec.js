@@ -1,4 +1,4 @@
-const SurveysReader = require("../dist").SurveysReader;
+const SurveysReader = require("../dist/npm").SurveysReader;
 const snap = require("./snap-events");
 
 const TOKEN = process.env.SURVEY_MONKEY_TOKEN;
