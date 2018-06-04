@@ -17,6 +17,19 @@ module.exports = (reader, done) => {
       done();
     })
     .on("error", error => {
+      if (typeof error.body === "string") {
+        error.body = error.body.substr(0, 100);
+      }
+      if (error.headers) {
+        error.headers.date = "[REDACTED]";
+        error.headers["set-cookie"] = error.headers["set-cookie"].map(s =>
+          s
+            .split(";")
+            .map(s => s.split("=")[0] + "=[REDACTED]")
+            .join(";")
+        );
+        error.headers["sm-request-id"] = "[REDACTED]";
+      }
       events.push({ error });
       snapshot(events);
       done();
