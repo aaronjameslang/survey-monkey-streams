@@ -48,7 +48,7 @@ class Reader extends Readable {
       { qs: { page: this.page + 1 } },
       (error: Error, reponse: request.Response, body: any) => {
         if (error || body.error) {
-          process.nextTick(() => this.emit("error", error || body.error));
+          this.emit("error", error || body.error);
           return;
         }
         // Page events allow progress checks and API limits
@@ -58,7 +58,12 @@ class Reader extends Readable {
         body.data.forEach((datum: object) => {
           more = this.push(datum);
         });
-        this.semaphore += 1;
+        this.semaphore += 1; // After this.push, which calls this._read
+        // Progress events count *buffered* data, which may not yet be read
+        this.emit("progress", {
+          count: body.page * body.per_page,
+          total: body.total
+        });
         if (!body.links.next) {
           this.push(null);
           return;
