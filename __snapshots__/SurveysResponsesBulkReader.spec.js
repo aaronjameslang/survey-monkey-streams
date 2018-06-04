@@ -1352,6 +1352,18 @@ exports['SurveysResponsesBulkReader should read responses 1'] = [
     "metadata": {}
   },
   {
+    "progress": {
+      "response": {
+        "count": 5,
+        "total": 16
+      },
+      "survey": {
+        "count": 4,
+        "total": 4
+      }
+    }
+  },
+  {
     "total_time": 2,
     "href": "https://api.surveymonkey.net/v3/surveys/152299598/responses/10044859975",
     "custom_variables": {},
@@ -2027,6 +2039,18 @@ exports['SurveysResponsesBulkReader should read responses 1'] = [
     "metadata": {}
   },
   {
+    "progress": {
+      "response": {
+        "count": 10,
+        "total": 16
+      },
+      "survey": {
+        "count": 4,
+        "total": 4
+      }
+    }
+  },
+  {
     "total_time": 2,
     "href": "https://api.surveymonkey.net/v3/surveys/152299598/responses/10044861170",
     "custom_variables": {},
@@ -2700,6 +2724,18 @@ exports['SurveysResponsesBulkReader should read responses 1'] = [
     "collection_mode": "data_entry",
     "edit_url": "https://www.surveymonkey.com/r/?sm=9kYVqROyoMBKpC03uz20971pMexBdA8CPdu21FvAdeIH_2Fof1yqsbd5n_2Brs5qIBME",
     "metadata": {}
+  },
+  {
+    "progress": {
+      "response": {
+        "count": 15,
+        "total": 16
+      },
+      "survey": {
+        "count": 4,
+        "total": 4
+      }
+    }
   },
   {
     "total_time": 2,

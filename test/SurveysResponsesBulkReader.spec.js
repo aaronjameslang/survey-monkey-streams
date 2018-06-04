@@ -9,7 +9,8 @@ assert(TOKEN);
 describe("SurveysResponsesBulkReader", () => {
   it("should read responses", done => {
     const reader = new ResponsesBulkReader({
-      headers: { authorization: `bearer ${TOKEN}` }
+      headers: { authorization: `bearer ${TOKEN}` },
+      qs: { per_page: 5 }
     });
     const data = [];
     reader.on("data", d => {

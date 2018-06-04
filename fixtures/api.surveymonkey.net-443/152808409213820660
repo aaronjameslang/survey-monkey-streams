@@ -5,21 +5,21 @@ accept: application/json
 
 HTTP/1.1 200 OK
 server: nginx
-date: Mon, 04 Jun 2018 03:12:28 GMT
+date: Mon, 04 Jun 2018 03:48:11 GMT
 content-type: application/json
 content-length: 154
 connection: close
 vary: Accept-Encoding, Accept-Encoding
-set-cookie: ep201=gPrZQ9w20KLtwenrnNCjs4DitOA=; Domain=.surveymonkey.net; Path=/; Expires=Mon, 04-Jun-18 03:42:28 GMT
-set-cookie: ep202=gTcwgU+kSFYPMfcmgyfJS8UAVgM=; Domain=.surveymonkey.net; Path=/; Expires=Sun, 02-Sep-18 03:12:28 GMT
+set-cookie: ep201=ZbquW32M6d2T6BXnBGQdO+1lk8M=; Domain=.surveymonkey.net; Path=/; Expires=Mon, 04-Jun-18 04:18:11 GMT
+set-cookie: ep202=qtecsji+B7akMzQvYubEqJdcSYI=; Domain=.surveymonkey.net; Path=/; Expires=Sun, 02-Sep-18 03:48:11 GMT
 x-ratelimit-app-global-minute-limit: 120
 x-ratelimit-app-global-minute-remaining: 115
-x-ratelimit-app-global-minute-reset: 31
+x-ratelimit-app-global-minute-reset: 48
 x-ratelimit-app-global-day-limit: 500
-x-ratelimit-app-global-day-remaining: 268
-x-ratelimit-app-global-day-reset: 74851
+x-ratelimit-app-global-day-remaining: 241
+x-ratelimit-app-global-day-reset: 72708
 link: <https://api.surveymonkey.net/v3/surveys/152303492/responses/bulk?page=1&per_page=50>; rel="self"
-sm-request-id: 33677e7e-67fd-47e6-a0b5-868cee670c20
+sm-request-id: b2c8a02a-18a9-438e-af9e-8805df0d1dec
 x-oauth-scopes-granted: responses_read,responses_read_detail,surveys_read
 x-oauth-scopes-available: users_read,surveys_read,collectors_read,collectors_write,contacts_read,contacts_write,surveys_write,responses_read,webhooks_read,webhooks_write,library_read
 cache-control: no-store, no-cache, max-age=0, private, must-revalidate
