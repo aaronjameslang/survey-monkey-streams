@@ -1,7 +1,7 @@
 {
   "name": "survey-monkey-streams",
   "version": "0.0.0",
-  "description": "Stream to/from the Survey Monkey API",
+  "description": "Stream the Survey Monkey API",
   "author": "Aaron J. Lang <aaronjameslang@googlemail.com>",
   "license": "MIT",
   "engines": {
