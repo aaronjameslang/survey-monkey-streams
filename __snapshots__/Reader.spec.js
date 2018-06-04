@@ -2346,7 +2346,7 @@ exports['Reader should read multiple pages 1'] = [
   },
   {
     "progress": {
-      "count": 20,
+      "count": 16,
       "total": 16
     }
   }

@@ -2,6 +2,7 @@ import request, { Options as RequestOptions } from "request";
 import { Readable, ReadableOptions } from "stream";
 
 class Reader extends Readable {
+  private count = 0;
   private page = 0;
   private readonly request: request.DefaultUriUrlRequestApi<
     request.Request,
@@ -56,11 +57,12 @@ class Reader extends Readable {
         let more = true; // Initialise as true, in case data is empty
         body.data.forEach((datum: object) => {
           more = this.push(datum);
+          this.count += 1;
         });
         this.semaphore += 1; // After this.push, which calls this._read
         // Progress events count *buffered* data, which may not yet be read
         this.emit("progress", {
-          count: body.page * body.per_page,
+          count: this.count,
           total: body.total
         });
         if (!body.links.next) {

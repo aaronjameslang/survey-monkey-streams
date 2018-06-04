@@ -7,11 +7,9 @@ class SurveysResponsesBulkReader extends Readable {
   private readonly requestOptions: RequestOptions;
   private readonly surveysReader: SurveysReader;
   private responsesBulkReader?: ResponsesBulkReader;
+  private surveyProgressCount = 0;
+  private surveyProgressTotal = 0;
   private surveysReaderEnded = false;
-  private surveyProgress: any = {
-    count: 0,
-    total: 0
-  };
   /**
    * @example new SurveysResponsesBulkReader('152299598', {
    *   headers: { authorization: 'bearer xxxxx.yyyyy.zzzzz' }
@@ -30,12 +28,12 @@ class SurveysResponsesBulkReader extends Readable {
     )
       .on("data", (survey: { id: string }) => {
         this.surveysReader.pause();
-        this.surveyProgress.count += 1;
+        this.surveyProgressCount += 1;
         this.emit("survey", survey);
         this.initResponsesBulkReader(survey.id);
       })
       .on("page", page => {
-        this.surveyProgress.total = page.total;
+        this.surveyProgressTotal = page.total;
         this.emit("page", page, "survey");
       })
       .on("end", () => {
@@ -69,7 +67,10 @@ class SurveysResponsesBulkReader extends Readable {
       .on("progress", progress => {
         this.emit("progress", {
           response: progress,
-          survey: this.surveyProgress
+          survey: {
+            count: this.surveyProgressCount,
+            total: this.surveyProgressTotal
+          }
         });
       })
       .on("end", () => {

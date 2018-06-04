@@ -15,8 +15,10 @@ describe("SurveysResponsesBulkReader", () => {
     reader.on("data", d => {
       data.push(d);
     });
+    reader.on("progress", progress => {
+      data.push({ progress });
+    });
     reader.on("end", () => {
-      assert.equal(data.length, 21);
       snapshot(data);
       done();
     });

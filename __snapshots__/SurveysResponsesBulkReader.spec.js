@@ -143,6 +143,30 @@ exports['SurveysResponsesBulkReader should read responses 1'] = [
     "metadata": {}
   },
   {
+    "progress": {
+      "response": {
+        "count": 1,
+        "total": 1
+      },
+      "survey": {
+        "count": 1,
+        "total": 4
+      }
+    }
+  },
+  {
+    "progress": {
+      "response": {
+        "count": 0,
+        "total": 0
+      },
+      "survey": {
+        "count": 2,
+        "total": 4
+      }
+    }
+  },
+  {
     "total_time": 7,
     "href": "https://api.surveymonkey.net/v3/surveys/152299962/responses/10044868609",
     "custom_variables": {},
@@ -639,6 +663,18 @@ exports['SurveysResponsesBulkReader should read responses 1'] = [
     "collection_mode": "data_entry",
     "edit_url": "https://www.surveymonkey.com/r/?sm=WMa21MeeU8TvZwv12sbVPvDoysqEcMV5i69mrDfSuOx3gJDKulFRLh7mqsf_2F6z1f",
     "metadata": {}
+  },
+  {
+    "progress": {
+      "response": {
+        "count": 4,
+        "total": 4
+      },
+      "survey": {
+        "count": 3,
+        "total": 4
+      }
+    }
   },
   {
     "total_time": 2,
@@ -2799,5 +2835,17 @@ exports['SurveysResponsesBulkReader should read responses 1'] = [
     "collection_mode": "data_entry",
     "edit_url": "https://www.surveymonkey.com/r/?sm=f_2BIAysLYyq7XuWMOsLdCX47agznLWsi67BBR6rcXlKib1SmC9SfJZD3FPr0FCQu9",
     "metadata": {}
+  },
+  {
+    "progress": {
+      "response": {
+        "count": 16,
+        "total": 16
+      },
+      "survey": {
+        "count": 4,
+        "total": 4
+      }
+    }
   }
 ]
