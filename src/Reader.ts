@@ -47,9 +47,17 @@ class Reader extends Readable {
 
     this.request(
       { qs: { page: this.page + 1 } },
-      (error: Error, reponse: request.Response, body: any) => {
-        if (error || body.error) {
-          this.emit("error", error || body.error);
+      (error: Error, response: request.Response, body: any) => {
+        if (error) {
+          this.emit("error", error);
+          return;
+        }
+        if (response.statusCode >= 300) {
+          this.emit("error", response);
+          return;
+        }
+        if (body.error) {
+          this.emit("error", body.error);
           return;
         }
         // Page events allow tracking API limit consumption

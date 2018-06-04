@@ -40,11 +40,11 @@ describe("Reader", () => {
     });
     snap(reader, done);
   });
-  // it("should emit http errors", done => {
-  //   // This test relies on a custom http fixture
-  //   const reader = new Reader({
-  //     url: "surveyz"
-  //   });
-  //   snap(reader, done);
-  // });
+  it("should emit http errors", done => {
+    // This test relies on a custom http fixture
+    const reader = new Reader({
+      url: "zurveyz/24601"
+    });
+    snap(reader, done);
+  });
 });
