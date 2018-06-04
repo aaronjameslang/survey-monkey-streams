@@ -9,7 +9,6 @@ class Reader extends Readable {
     request.OptionalUriUrl
   >;
   private semaphore = 1;
-  private total?: number;
 
   /**
    * @example new Reader({
@@ -55,8 +54,7 @@ class Reader extends Readable {
         // Page events allow progress checks and API limits
         process.nextTick(() => this.emit("page", body));
         process.nextTick(() => {
-          this.page = body.page; // TODO kill?
-          this.total = body.total; // TODO kill?
+          this.page = body.page;
           let more = true; // Initialise as true, in case data is empty
           body.data.forEach((datum: object) => {
             more = this.push(datum);
