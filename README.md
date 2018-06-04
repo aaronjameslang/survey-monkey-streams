@@ -2,6 +2,8 @@
 
 ![Travis](https://img.shields.io/travis/aaronjameslang/survey-monkey-streams.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8a959084f74b5a86c453/maintainability)](https://codeclimate.com/github/aaronjameslang/survey-monkey-streams/maintainability)
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](aaronjameslang/survey-monkey-streams)
+
 
  Stream the [Survey Monkey API](developer.surveymonkey.com/api/v3/)
 
