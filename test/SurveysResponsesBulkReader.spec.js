@@ -25,4 +25,27 @@ describe("SurveysResponsesBulkReader", () => {
     });
     reader.on("error", done);
   });
+  it("should read responses since", done => {
+    const reader = new ResponsesBulkReader(
+      {
+        headers: { authorization: `bearer ${TOKEN}` }
+      },
+      {
+        headers: { authorization: `bearer ${TOKEN}` },
+        qs: { start_created_at: "2018-05-31T23:27:00+00:00" }
+      }
+    );
+    const data = [];
+    reader.on("data", d => {
+      data.push(d);
+    });
+    reader.on("progress", progress => {
+      data.push({ progress });
+    });
+    reader.on("end", () => {
+      snapshot(data);
+      done();
+    });
+    reader.on("error", done);
+  });
 });

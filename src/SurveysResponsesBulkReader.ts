@@ -4,7 +4,8 @@ import SurveysReader, { RequestOptions } from "./SurveysReader";
 
 class SurveysResponsesBulkReader extends Readable {
   private readonly readableOptions: ReadableOptions;
-  private readonly requestOptions: RequestOptions;
+  private readonly responseRequestOptions: RequestOptions;
+  private readonly surveyRequestOptions: RequestOptions;
   private readonly surveysReader: SurveysReader;
   private responsesBulkReader?: ResponsesBulkReader;
   private surveyProgressCount = 0;
@@ -16,14 +17,17 @@ class SurveysResponsesBulkReader extends Readable {
    * })
    */
   public constructor(
-    requestOptions: RequestOptions,
+    surveyRequestOptions: RequestOptions,
+    responseRequestOptions?: RequestOptions,
     readableOptions: ReadableOptions = {}
   ) {
     super({ ...readableOptions, objectMode: true });
-    this.requestOptions = requestOptions;
+    this.surveyRequestOptions = surveyRequestOptions;
+    this.responseRequestOptions =
+      responseRequestOptions || surveyRequestOptions;
     this.readableOptions = readableOptions;
-    this.surveysReader = new SurveysReader(
-      this.requestOptions,
+    this.surveysReader = new SurveysReader( // TODO move to init
+      this.surveyRequestOptions,
       this.readableOptions
     )
       .on("data", (survey: { id: string }) => {
@@ -42,6 +46,7 @@ class SurveysResponsesBulkReader extends Readable {
       .on("error", error => {
         this.emit("error", error);
       });
+    // TODO pause
   }
 
   public initResponsesBulkReader(id: string) {
@@ -50,7 +55,7 @@ class SurveysResponsesBulkReader extends Readable {
     }
     this.responsesBulkReader = new ResponsesBulkReader(
       id,
-      this.requestOptions,
+      this.responseRequestOptions,
       this.readableOptions
     )
       .on("data", response => {

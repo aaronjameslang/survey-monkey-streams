@@ -1,0 +1,32 @@
+GET /v3/surveys/152303492/responses/bulk?start_created_at=2018-05-31T23%3A27%3A00%2B00%3A00&page=1
+authorization: bearer FEk40QGlfQuAYxU5PtnZhgdIx9n.sM5cScKFvLwYCdWYtabdlAkYGpAzSzMCNY3g-49W-6EhYKjCIM7w5DYQcs1jKraTOsH09TANshiucLfV1Vg5COZPMOBvp9ZyGJVy
+host: api.surveymonkey.net
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx
+date: Mon, 04 Jun 2018 04:12:52 GMT
+content-type: application/json
+content-length: 154
+connection: close
+vary: Accept-Encoding, Accept-Encoding
+set-cookie: ep201=ISiRoFi210Gs2emG7y3+3DcePUU=; Domain=.surveymonkey.net; Path=/; Expires=Mon, 04-Jun-18 04:42:52 GMT
+set-cookie: ep202=YDlou5NWhQYgqnjJPCSvl+Prl/g=; Domain=.surveymonkey.net; Path=/; Expires=Sun, 02-Sep-18 04:12:52 GMT
+x-ratelimit-app-global-minute-limit: 120
+x-ratelimit-app-global-minute-remaining: 118
+x-ratelimit-app-global-minute-reset: 7
+x-ratelimit-app-global-day-limit: 500
+x-ratelimit-app-global-day-remaining: 199
+x-ratelimit-app-global-day-reset: 71227
+link: <https://api.surveymonkey.net/v3/surveys/152303492/responses/bulk?page=1&per_page=50>; rel="self"
+sm-request-id: 99c4ef8d-2308-448d-ac1e-0aabfde8ac6b
+x-oauth-scopes-granted: responses_read,responses_read_detail,surveys_read
+x-oauth-scopes-available: users_read,surveys_read,collectors_read,collectors_write,contacts_read,contacts_write,surveys_write,responses_read,webhooks_read,webhooks_write,library_read
+cache-control: no-store, no-cache, max-age=0, private, must-revalidate
+access-control-allow-headers: Authorization, Content-Type
+access-control-allow-methods: POST, GET, PATCH, PUT, DELETE, OPTIONS, HEAD
+access-control-allow-origin: *
+x-xss-protection: 1; mode=block
+x-content-type-options: nosniff
+
+{"per_page":50,"total":0,"data":[],"page":1,"links":{"self":"https:\/\/api.surveymonkey.net\/v3\/surveys\/152303492\/responses\/bulk?page=1&per_page=50"}}
