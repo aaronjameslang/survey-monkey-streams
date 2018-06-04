@@ -1,5 +1,8 @@
 exports['ResponsesBulkReader should read responses 1'] = [
   {
+    "page": 1
+  },
+  {
     "total_time": 2,
     "href": "https://api.surveymonkey.net/v3/surveys/152299598/responses/10044859279",
     "custom_variables": {},
@@ -2158,5 +2161,11 @@ exports['ResponsesBulkReader should read responses 1'] = [
     "collection_mode": "data_entry",
     "edit_url": "https://www.surveymonkey.com/r/?sm=f_2BIAysLYyq7XuWMOsLdCX47agznLWsi67BBR6rcXlKib1SmC9SfJZD3FPr0FCQu9",
     "metadata": {}
+  },
+  {
+    "progress": {
+      "count": 16,
+      "total": 16
+    }
   }
 ]

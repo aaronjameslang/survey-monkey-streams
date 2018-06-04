@@ -6,6 +6,9 @@ module.exports = (reader, done) => {
     .on("data", data => {
       events.push(data);
     })
+    .on("page", ({ page }, type) => {
+      events.push({ page, type });
+    })
     .on("progress", progress => {
       events.push({ progress });
     })

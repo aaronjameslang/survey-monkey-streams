@@ -1,5 +1,13 @@
 exports['SurveysResponsesBulkReader should read responses 1'] = [
   {
+    "page": 1,
+    "type": "survey"
+  },
+  {
+    "page": 1,
+    "type": "response"
+  },
+  {
     "total_time": 12,
     "href": "https://api.surveymonkey.net/v3/surveys/152303468/responses/10045001533",
     "custom_variables": {},
@@ -155,6 +163,10 @@ exports['SurveysResponsesBulkReader should read responses 1'] = [
     }
   },
   {
+    "page": 1,
+    "type": "response"
+  },
+  {
     "progress": {
       "response": {
         "count": 0,
@@ -165,6 +177,10 @@ exports['SurveysResponsesBulkReader should read responses 1'] = [
         "total": 4
       }
     }
+  },
+  {
+    "page": 1,
+    "type": "response"
   },
   {
     "total_time": 7,
@@ -675,6 +691,10 @@ exports['SurveysResponsesBulkReader should read responses 1'] = [
         "total": 4
       }
     }
+  },
+  {
+    "page": 1,
+    "type": "response"
   },
   {
     "total_time": 2,
@@ -1364,6 +1384,10 @@ exports['SurveysResponsesBulkReader should read responses 1'] = [
     }
   },
   {
+    "page": 2,
+    "type": "response"
+  },
+  {
     "total_time": 2,
     "href": "https://api.surveymonkey.net/v3/surveys/152299598/responses/10044859975",
     "custom_variables": {},
@@ -2049,6 +2073,10 @@ exports['SurveysResponsesBulkReader should read responses 1'] = [
         "total": 4
       }
     }
+  },
+  {
+    "page": 3,
+    "type": "response"
   },
   {
     "total_time": 2,
@@ -2738,6 +2766,10 @@ exports['SurveysResponsesBulkReader should read responses 1'] = [
     }
   },
   {
+    "page": 4,
+    "type": "response"
+  },
+  {
     "total_time": 2,
     "href": "https://api.surveymonkey.net/v3/surveys/152299598/responses/10044861967",
     "custom_variables": {},
@@ -2887,6 +2919,14 @@ exports['SurveysResponsesBulkReader should read responses 1'] = [
 ]
 
 exports['SurveysResponsesBulkReader should read responses since 1'] = [
+  {
+    "page": 1,
+    "type": "survey"
+  },
+  {
+    "page": 1,
+    "type": "response"
+  },
   {
     "total_time": 12,
     "href": "https://api.surveymonkey.net/v3/surveys/152303468/responses/10045001533",
@@ -3043,6 +3083,10 @@ exports['SurveysResponsesBulkReader should read responses since 1'] = [
     }
   },
   {
+    "page": 1,
+    "type": "response"
+  },
+  {
     "progress": {
       "response": {
         "count": 0,
@@ -3053,6 +3097,10 @@ exports['SurveysResponsesBulkReader should read responses since 1'] = [
         "total": 4
       }
     }
+  },
+  {
+    "page": 1,
+    "type": "response"
   },
   {
     "total_time": 7,
@@ -3563,6 +3611,10 @@ exports['SurveysResponsesBulkReader should read responses since 1'] = [
         "total": 4
       }
     }
+  },
+  {
+    "page": 1,
+    "type": "response"
   },
   {
     "total_time": 5,

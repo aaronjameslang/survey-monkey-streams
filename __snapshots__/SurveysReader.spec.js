@@ -1,5 +1,8 @@
 exports['SurveysReader should read surveys 1'] = [
   {
+    "page": 1
+  },
+  {
     "href": "https://api.surveymonkey.net/v3/surveys/152303468",
     "nickname": "",
     "id": "152303468",
@@ -22,5 +25,11 @@ exports['SurveysReader should read surveys 1'] = [
     "nickname": "",
     "id": "152299598",
     "title": "Quiz - Capitals of the World"
+  },
+  {
+    "progress": {
+      "count": 4,
+      "total": 4
+    }
   }
 ]

@@ -1,5 +1,8 @@
 exports['Reader should read surveys 1'] = [
   {
+    "page": 1
+  },
+  {
     "href": "https://api.surveymonkey.net/v3/surveys/152303468",
     "nickname": "",
     "id": "152303468",
@@ -22,10 +25,19 @@ exports['Reader should read surveys 1'] = [
     "nickname": "",
     "id": "152299598",
     "title": "Quiz - Capitals of the World"
+  },
+  {
+    "progress": {
+      "count": 4,
+      "total": 4
+    }
   }
 ]
 
 exports['Reader should read responses 1'] = [
+  {
+    "page": 1
+  },
   {
     "total_time": 12,
     "href": "https://api.surveymonkey.net/v3/surveys/152303468/responses/10045001533",
@@ -168,6 +180,12 @@ exports['Reader should read responses 1'] = [
     "collection_mode": "data_entry",
     "edit_url": "https://www.surveymonkey.com/r/?sm=oI6Tq6SBVjBIllOJkFepoac_2FQutB5ev_2BeGd49Ws_2Bx2QHCQjlEDOtGgU7OtnpbWD6",
     "metadata": {}
+  },
+  {
+    "progress": {
+      "count": 1,
+      "total": 1
+    }
   }
 ]
 
@@ -2352,4 +2370,14 @@ exports['Reader should read multiple pages 1'] = [
   }
 ]
 
-exports['Reader should read empty responses 1'] = []
+exports['Reader should read empty responses 1'] = [
+  {
+    "page": 1
+  },
+  {
+    "progress": {
+      "count": 0,
+      "total": 0
+    }
+  }
+]
