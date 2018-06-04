@@ -20,9 +20,7 @@
     "survey"
   ],
   "scripts": {
-    "posttest": "tslint --project . && eslint . && prettier '**/*.{js,json,ts}' > /dev/null",
-    "pretest": "tslint --project . --fix ; eslint . --fix ; prettier '**/*.{js,json,ts}' --write ; barrelsby --directory src --delete && rm -rf dist && tsc",
-    "test": "mocha"
+    "test": "./build.sh"
   },
   "dependencies": {
     "@types/request": "^2.47.0",
@@ -39,6 +37,7 @@
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
     "mocha": "^5.2.0",
+    "prettier": "^1.13.4",
     "snap-shot-it": "^5.0.1",
     "tslint": "^5.10.0",
     "tslint-config-prettier": "^1.13.0",
