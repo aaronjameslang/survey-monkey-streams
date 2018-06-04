@@ -44,11 +44,10 @@ describe("Reader", () => {
     });
     const data = [];
     reader.on("data", d => {
-      assert.equal(typeof reader.page, "number");
-      if (!data[reader.page]) {
-        data[reader.page] = [];
-      }
-      data[reader.page].push(d);
+      data.push(d);
+    });
+    reader.on("page", ({ page }) => {
+      data.push({ page });
     });
     reader.on("end", () => {
       snapshot(data);
