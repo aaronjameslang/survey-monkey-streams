@@ -2,10 +2,7 @@
   "env": {
     "commonjs": true
   },
-  "extends": [
-    "eslint:recommended",
-    "standard"
-  ],
+  "extends": ["eslint:recommended"],
   "parserOptions": {
     "ecmaVersion": 6
   }
