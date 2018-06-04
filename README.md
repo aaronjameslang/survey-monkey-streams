@@ -1,8 +1,8 @@
 # 🐵 survey-monkey-streams
 
-[![Build Status](https://travis-ci.org/aaronjameslang/survey-monkey-streams.svg?branch=master)](https://travis-ci.org/aaronjameslang/survey-monkey-streams)
-[![Maintainability](https://api.codeclimate.com/v1/badges/8a959084f74b5a86c453/maintainability)](https://codeclimate.com/github/aaronjameslang/survey-monkey-streams/maintainability)
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](aaronjameslang/survey-monkey-streams)
+[![Build Status](//travis-ci.org/aaronjameslang/survey-monkey-streams.svg?branch=master)](//travis-ci.org/aaronjameslang/survey-monkey-streams)
+[![Maintainability](//api.codeclimate.com/v1/badges/8a959084f74b5a86c453/maintainability)](//codeclimate.com/github/aaronjameslang/survey-monkey-streams/maintainability)
+[![Gitter](//badges.gitter.im/aaronjameslang/survey-monkey-streams.svg)](//gitter.im/aaronjameslang/survey-monkey-streams)
 
 Stream the [Survey Monkey API](//developer.surveymonkey.com/api/v3/)
 
