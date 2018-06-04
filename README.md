@@ -47,6 +47,12 @@ Read the [Documentation](//aaronjameslang.com/survey-monkey-streams) for more in
   - Read about the [`request`](//npmjs.com/package/request) module
   - Consult the [Survey Monkey API Docs](//developer.surveymonkey.com/api/v3/)
 
+## Design Decisions
+
+### [KISS](//wiki.archlinux.org/index.php/Arch_Linux#Principles)
+
+Rather than define a new API, this module chooses to expose the APIs of the underlying technologies, i.e. [`request`](//npmjs.com/package/request) and the [Node.js Stream API](//nodejs.org/api/stream.html). Common use cases are more verbose than they might otherwise be, but minimal tampering means less bugs, documentation and frustration.
+
 ## Contribution
 
 Bug? Feature request? Not sure? [Open an issue!](//github.com/aaronjameslang/survey-monkey-streams/issues/new)
