@@ -1,6 +1,6 @@
-#survey-monkey-streams
+# :monkey_face: survey-monkey-streams
 
-:monkey_face: Stream the [Survey Monkey API](developer.surveymonkey.com/api/v3/)
+ Stream the [Survey Monkey API](developer.surveymonkey.com/api/v3/)
 
 ## Why?
 
@@ -14,4 +14,4 @@ Bug? Feature request? Not sure? [Open an issue!](github.com/aaronjameslang/surve
 
 I wrote this to fix a problem I was facing, so it might need stretching to meet your needs. Notably, there is no `Writable` yet.
 
-Pull requests welcome, but please get in touch first. I don't want to waste you time :relaxed:
+Pull requests welcome, but please get in touch first. I don't want to waste your time :relaxed:
