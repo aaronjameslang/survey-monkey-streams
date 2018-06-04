@@ -52,22 +52,20 @@ class Reader extends Readable {
           return;
         }
         // Page events allow progress checks and API limits
-        process.nextTick(() => this.emit("page", body));
-        process.nextTick(() => {
-          this.page = body.page;
-          let more = true; // Initialise as true, in case data is empty
-          body.data.forEach((datum: object) => {
-            more = this.push(datum);
-          });
-          this.semaphore += 1;
-          if (!body.links.next) {
-            this.push(null);
-            return;
-          }
-          if (more) {
-            this._read();
-          }
+        this.emit("page", body);
+        this.page = body.page;
+        let more = true; // Initialise as true, in case data is empty
+        body.data.forEach((datum: object) => {
+          more = this.push(datum);
         });
+        this.semaphore += 1;
+        if (!body.links.next) {
+          this.push(null);
+          return;
+        }
+        if (more) {
+          this._read();
+        }
       }
     );
   }
