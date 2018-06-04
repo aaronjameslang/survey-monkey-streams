@@ -5,77 +5,67 @@ const snapshot = require("snap-shot-it");
 const TOKEN = process.env.SURVEY_MONKEY_TOKEN;
 assert(TOKEN);
 
-describe("Reader", function() {
-  it("should read surveys", function(done) {
+describe("Reader", () => {
+  it("should read surveys", done => {
     const reader = new Reader({
       url: "surveys",
-      headers: {
-        authorization: "bearer " + TOKEN
-      }
+      headers: { authorization: `bearer ${TOKEN}` }
     });
     const data = [];
-    reader.on("data", function(d) {
+    reader.on("data", d => {
       data.push(d);
     });
-    reader.on("end", function() {
+    reader.on("end", () => {
       snapshot(data);
       done();
     });
     reader.on("error", done);
   });
-  it("should read responses", function(done) {
+  it("should read responses", done => {
     const reader = new Reader({
       url: "surveys/152303468/responses/bulk",
-      headers: {
-        authorization: "bearer " + TOKEN
-      }
+      headers: { authorization: `bearer ${TOKEN}` }
     });
     const data = [];
-    reader.on("data", function(d) {
+    reader.on("data", d => {
       data.push(d);
     });
-    reader.on("end", function() {
+    reader.on("end", () => {
       snapshot(data);
       done();
     });
     reader.on("error", done);
   });
-  it("should read multiple pages", function(done) {
+  it("should read multiple pages", done => {
     const reader = new Reader({
       url: "surveys/152299598/responses/bulk",
-      headers: {
-        authorization: "bearer " + TOKEN
-      },
-      qs: {
-        per_page: 10
-      }
+      headers: { authorization: `bearer ${TOKEN}` },
+      qs: { per_page: 10 }
     });
     const data = [];
-    reader.on("data", function(d) {
+    reader.on("data", d => {
       assert.equal(typeof reader.page, "number");
       if (!data[reader.page]) {
         data[reader.page] = [];
       }
       data[reader.page].push(d);
     });
-    reader.on("end", function() {
+    reader.on("end", () => {
       snapshot(data);
       done();
     });
     reader.on("error", done);
   });
-  it("should read empty responses", function(done) {
+  it("should read empty responses", done => {
     const reader = new Reader({
       url: "surveys/152303492/responses/bulk",
-      headers: {
-        authorization: "bearer " + TOKEN
-      }
+      headers: { authorization: `bearer ${TOKEN}` }
     });
     const data = [];
-    reader.on("data", function(d) {
+    reader.on("data", d => {
       data.push(d);
     });
-    reader.on("end", function() {
+    reader.on("end", () => {
       snapshot(data);
       done();
     });

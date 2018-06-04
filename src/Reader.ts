@@ -2,13 +2,13 @@ import request, { Options as RequestOptions } from "request";
 import { Readable, ReadableOptions } from "stream";
 
 class Reader extends Readable {
-  private page: number = 0;
+  private page = 0;
   private readonly request: request.DefaultUriUrlRequestApi<
     request.Request,
     request.CoreOptions,
     request.OptionalUriUrl
   >;
-  private semaphore: number = 1;
+  private semaphore = 1;
   private total?: number;
 
   /**
@@ -24,7 +24,7 @@ class Reader extends Readable {
    *   highWaterMark: 5000
    * })
    */
-  constructor(
+  public constructor(
     requestOptions: RequestOptions,
     readableOptions: ReadableOptions = {}
   ) {

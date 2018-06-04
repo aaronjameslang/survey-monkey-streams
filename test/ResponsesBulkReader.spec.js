@@ -5,18 +5,16 @@ const snapshot = require("snap-shot-it");
 const TOKEN = process.env.SURVEY_MONKEY_TOKEN;
 assert(TOKEN);
 
-describe("ResponsesBulkReader", function() {
-  it("should read responses", function(done) {
+describe("ResponsesBulkReader", () => {
+  it("should read responses", done => {
     const reader = new ResponsesBulkReader(152299598, {
-      headers: {
-        authorization: "bearer " + TOKEN
-      }
+      headers: { authorization: `bearer ${TOKEN}` }
     });
     const data = [];
-    reader.on("data", function(d) {
+    reader.on("data", d => {
       data.push(d);
     });
-    reader.on("end", function() {
+    reader.on("end", () => {
       assert.equal(data.length, 16);
       snapshot(data);
       done();

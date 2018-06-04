@@ -6,7 +6,7 @@ class ResponsesBulkReader extends Reader {
    *   headers: { authorization: 'bearer xxxxx.yyyyy.zzzzz' }
    * })
    */
-  constructor(
+  public constructor(
     surveyId: string,
     requestOptions: RequestOptions,
     readableOptions: ReadableOptions = {}

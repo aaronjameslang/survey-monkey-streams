@@ -3,17 +3,17 @@ import ResponsesBulkReader from "./ResponsesBulkReader";
 import SurveysReader, { RequestOptions } from "./SurveysReader";
 
 class SurveysResponsesBulkReader extends Readable {
-  private readableOptions: ReadableOptions;
-  private requestOptions: RequestOptions;
+  private readonly readableOptions: ReadableOptions;
+  private readonly requestOptions: RequestOptions;
   private responsesBulkReader?: ResponsesBulkReader;
-  private surveysReader: SurveysReader;
+  private readonly surveysReader: SurveysReader;
   private surveysReaderEnded = false;
   /**
    * @example new SurveysResponsesBulkReader('152299598', {
    *   headers: { authorization: 'bearer xxxxx.yyyyy.zzzzz' }
    * })
    */
-  constructor(
+  public constructor(
     requestOptions: RequestOptions,
     readableOptions: ReadableOptions = {}
   ) {

@@ -6,7 +6,7 @@ class SurveysReader extends Reader {
    *   headers: { authorization: 'bearer xxxxx.yyyyy.zzzzz' }
    * })
    */
-  constructor(
+  public constructor(
     requestOptions: RequestOptions,
     readableOptions: ReadableOptions = {}
   ) {
