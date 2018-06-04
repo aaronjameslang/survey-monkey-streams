@@ -15,11 +15,36 @@ Stream the [Survey Monkey API](//developer.surveymonkey.com/api/v3/)
   - Paging: We abstract away page handling, allowing you to consume data from beginning to end
   - Backpressure: We won't read faster than you can process the data, keeping memory requirements low
 
+## Usage
+
+```shell
+  npm i survey-monkey-streams
+```
+```js
+  import { Reader } from 'survey-monkey-streams';
+  const reader = new Reader({
+    url: `collectors/${id}/responses`,
+    headers: { authorization: `bearer ${token}` }
+  })
+  reader.on('data', response => {
+    console.log(response)
+  })
+```
+```js
+  import { SurveysResponsesBulkReader } from 'survey-monkey-streams';
+  const reader = new SurveysResponsesBulkReader({
+    headers: { authorization: `bearer ${token}` }
+  })
+  reader.pipe(myDbWriter)
+```
+Read the [Documentation](//aaronjameslang.com/survey-monkey-streams) for more information (coming soon)
 ## Links
 
-  - Read the code on [GitHub](//github.com/aaronjameslang/survey-monkey-streams)
   - Install from [NPM](//npmjs.com/package/survey-monkey-streams)
-  - [Documentation in progress](//aaronjameslang.com/survey-monkey-streams)
+  - Read the code on [GitHub](//github.com/aaronjameslang/survey-monkey-streams)
+  - Read the [Documentation](//aaronjameslang.com/survey-monkey-streams) (coming soon)
+  - Read about the [Node.js Stream API](//nodejs.org/api/stream.html)
+  - Read about the [`request`](//npmjs.com/package/request) module
   - Consult the [Survey Monkey API Docs](//developer.surveymonkey.com/api/v3/)
 
 ## Contribution
