@@ -33,4 +33,18 @@ describe("Reader", () => {
     });
     snap(reader, done);
   });
+  it("should emit api errors", done => {
+    const reader = new Reader({
+      url: "surveys",
+      headers: { authorization: `bearer INVALID_TOKEN` }
+    });
+    snap(reader, done);
+  });
+  // it("should emit http errors", done => {
+  //   // This test relies on a custom http fixture
+  //   const reader = new Reader({
+  //     url: "surveyz"
+  //   });
+  //   snap(reader, done);
+  // });
 });

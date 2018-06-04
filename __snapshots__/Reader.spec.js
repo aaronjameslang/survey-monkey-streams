@@ -2381,3 +2381,15 @@ exports['Reader should read empty responses 1'] = [
     }
   }
 ]
+
+exports['Reader should emit api errors 1'] = [
+  {
+    "error": {
+      "docs": "https://developer.surveymonkey.com/api/v3/#error-codes",
+      "message": "The authorization token provided was invalid.",
+      "id": "1011",
+      "name": "Authorization Error",
+      "http_status_code": 401
+    }
+  }
+]

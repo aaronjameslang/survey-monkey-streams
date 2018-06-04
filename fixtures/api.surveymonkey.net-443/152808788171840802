@@ -1,0 +1,22 @@
+GET /v3/surveys?page=1
+authorization: bearer INVALID_TOKEN
+host: api.surveymonkey.net
+accept: application/json
+
+HTTP/1.1 401 Unauthorized
+server: nginx
+date: Mon, 04 Jun 2018 04:51:21 GMT
+content-type: application/json
+content-length: 207
+connection: close
+set-cookie: ep201=ca5C/mNe5CgEMcj1I3ZGrg2/XJc=; Domain=.surveymonkey.net; Path=/; Expires=Mon, 04-Jun-18 05:21:21 GMT
+set-cookie: ep202=+efoG5OcwLA4WK6cO9J4gf+1Mag=; Domain=.surveymonkey.net; Path=/; Expires=Sun, 02-Sep-18 04:51:21 GMT
+sm-request-id: a9b18f74-1991-4439-8237-411a5267acdb
+cache-control: no-store, no-cache, max-age=0, private, must-revalidate
+access-control-allow-headers: Authorization, Content-Type
+access-control-allow-methods: POST, GET, PATCH, PUT, DELETE, OPTIONS, HEAD
+access-control-allow-origin: *
+x-xss-protection: 1; mode=block
+x-content-type-options: nosniff
+
+{"error": {"docs": "https://developer.surveymonkey.com/api/v3/#error-codes", "message": "The authorization token provided was invalid.", "id": "1011", "name": "Authorization Error", "http_status_code": 401}}
