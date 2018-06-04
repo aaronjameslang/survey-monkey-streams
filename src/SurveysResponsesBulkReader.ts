@@ -8,6 +8,10 @@ class SurveysResponsesBulkReader extends Readable {
   private readonly surveysReader: SurveysReader;
   private responsesBulkReader?: ResponsesBulkReader;
   private surveysReaderEnded = false;
+  private surveyProgress: any = {
+    count: 0,
+    total: 0
+  };
   /**
    * @example new SurveysResponsesBulkReader('152299598', {
    *   headers: { authorization: 'bearer xxxxx.yyyyy.zzzzz' }
@@ -26,13 +30,19 @@ class SurveysResponsesBulkReader extends Readable {
     )
       .on("data", (survey: { id: string }) => {
         this.surveysReader.pause();
+        this.surveyProgress.count += 1;
+        this.emit("survey", survey);
         this.initResponsesBulkReader(survey.id);
+      })
+      .on("page", page => {
+        this.surveyProgress.total = page.total;
+        this.emit("page", page, "survey");
       })
       .on("end", () => {
         this.surveysReaderEnded = true;
       })
       .on("error", error => {
-        process.nextTick(() => this.emit("error", error));
+        this.emit("error", error);
       });
   }
 
@@ -53,16 +63,25 @@ class SurveysResponsesBulkReader extends Readable {
           throw new Error("Impossible");
         }
       })
+      .on("page", page => {
+        this.emit("page", page, "response");
+      })
+      .on("progress", progress => {
+        this.emit("progress", {
+          response: progress,
+          survey: this.surveyProgress
+        });
+      })
       .on("end", () => {
         if (this.surveysReaderEnded) {
-          process.nextTick(() => this.emit("end"));
+          this.emit("end");
         } else {
           delete this.responsesBulkReader;
           this.surveysReader.resume();
         }
       })
       .on("error", error => {
-        process.nextTick(() => this.emit("error", error));
+        this.emit("error", error);
       });
   }
 
