@@ -45,8 +45,8 @@ class SurveysResponsesBulkReader extends Readable {
       })
       .on("error", error => {
         this.emit("error", error);
-      });
-    // TODO pause
+      })
+      .pause();
   }
 
   public initResponsesBulkReader(id: string) {
