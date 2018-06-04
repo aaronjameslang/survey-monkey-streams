@@ -5,7 +5,7 @@
 [![Known Vulnerabilities](http://snyk.io/test/github/aaronjameslang/survey-monkey-streams/badge.svg)](//snyk.io/test/github/aaronjameslang/survey-monkey-streams)
 [![Gitter](http://badges.gitter.im/aaronjameslang/survey-monkey-streams.svg)](//gitter.im/aaronjameslang/survey-monkey-streams)
 
-[![npm version](https://badge.fury.io/js/survey-monkey-streams.svg)](https://badge.fury.io/js/survey-monkey-streams)
+[![npm version](https://badge.fury.io/js/survey-monkey-streams.svg)](//npmjs.com/package/survey-monkey-streams)
 [![node](https://img.shields.io/node/v/survey-monkey-streams.svg)](//travis-ci.org/aaronjameslang/survey-monkey-streams)
 
 Stream the [Survey Monkey API](//developer.surveymonkey.com/api/v3/)
@@ -18,9 +18,9 @@ Stream the [Survey Monkey API](//developer.surveymonkey.com/api/v3/)
 ## Links
 
   - Read the code on [GitHub](//github.com/aaronjameslang/survey-monkey-streams)
-  - Consult the [Survey Monkey API Docs](//developer.surveymonkey.com/api/v3/)
+  - Install from [NPM](//npmjs.com/package/survey-monkey-streams)
   - [Documentation in progress](//aaronjameslang.com/survey-monkey-streams)
-  
+  - Consult the [Survey Monkey API Docs](//developer.surveymonkey.com/api/v3/)
 
 ## Contribution
 
