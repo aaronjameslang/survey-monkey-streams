@@ -51,9 +51,8 @@ class Reader extends Readable {
           this.emit("error", error || body.error);
           return;
         }
-        // Page events allow progress checks and API limits
+        // Page events allow tracking API limit consumption
         this.emit("page", body);
-        this.page = body.page;
         let more = true; // Initialise as true, in case data is empty
         body.data.forEach((datum: object) => {
           more = this.push(datum);
@@ -68,6 +67,7 @@ class Reader extends Readable {
           this.push(null);
           return;
         }
+        this.page = body.page; // Update page count before recursing
         if (more) {
           this._read();
         }
