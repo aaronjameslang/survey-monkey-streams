@@ -11,6 +11,12 @@ Stream the [Survey Monkey API](//developer.surveymonkey.com/api/v3/)
   - Paging: We abstract away page handling, allowing you to consume data from beginning to end
   - Backpressure: We won't read faster than you can process the data, keeping memory requirements low
 
+## Links
+
+  - Read the code on [GitHub](//github.com/aaronjameslang/survey-monkey-streams)
+  - Consult the [Survey Monkey API Docs](//developer.surveymonkey.com/api/v3/)
+  - [Documentation in progress](//aaronjameslang.com/survey-monkey-streams)
+  
 
 ## Contribution
 
