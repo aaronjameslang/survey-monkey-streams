@@ -1,5 +1,7 @@
 # :monkey_face: survey-monkey-streams
 
+![Travis](https://img.shields.io/travis/aaronjameslang/survey-monkey-streams.svg)
+
  Stream the [Survey Monkey API](developer.surveymonkey.com/api/v3/)
 
 ## Why?
