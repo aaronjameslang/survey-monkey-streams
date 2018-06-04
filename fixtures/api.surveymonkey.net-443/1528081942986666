@@ -1,0 +1,32 @@
+GET /v3/surveys/152303468/responses/bulk?page=1
+authorization: bearer FEk40QGlfQuAYxU5PtnZhgdIx9n.sM5cScKFvLwYCdWYtabdlAkYGpAzSzMCNY3g-49W-6EhYKjCIM7w5DYQcs1jKraTOsH09TANshiucLfV1Vg5COZPMOBvp9ZyGJVy
+host: api.surveymonkey.net
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx
+date: Mon, 04 Jun 2018 03:12:22 GMT
+content-type: application/json
+content-length: 1951
+connection: close
+vary: Accept-Encoding, Accept-Encoding
+set-cookie: ep201=U0DWE1uUP8Od4CDPRgALbtqWX+I=; Domain=.surveymonkey.net; Path=/; Expires=Mon, 04-Jun-18 03:42:21 GMT
+set-cookie: ep202=zqztPlXeIiFSZsA6AVfsY0boB3U=; Domain=.surveymonkey.net; Path=/; Expires=Sun, 02-Sep-18 03:12:21 GMT
+x-ratelimit-app-global-minute-limit: 120
+x-ratelimit-app-global-minute-remaining: 118
+x-ratelimit-app-global-minute-reset: 37
+x-ratelimit-app-global-day-limit: 500
+x-ratelimit-app-global-day-remaining: 271
+x-ratelimit-app-global-day-reset: 74857
+link: <https://api.surveymonkey.net/v3/surveys/152303468/responses/bulk?page=1&per_page=50>; rel="self"
+sm-request-id: 2ac1e6dd-b8c1-444d-b6f8-6a077b77c5c0
+x-oauth-scopes-granted: responses_read,responses_read_detail,surveys_read
+x-oauth-scopes-available: users_read,surveys_read,collectors_read,collectors_write,contacts_read,contacts_write,surveys_write,responses_read,webhooks_read,webhooks_write,library_read
+cache-control: no-store, no-cache, max-age=0, private, must-revalidate
+access-control-allow-headers: Authorization, Content-Type
+access-control-allow-methods: POST, GET, PATCH, PUT, DELETE, OPTIONS, HEAD
+access-control-allow-origin: *
+x-xss-protection: 1; mode=block
+x-content-type-options: nosniff
+
+{"per_page":50,"total":1,"data":[{"total_time":12,"href":"https:\/\/api.surveymonkey.net\/v3\/surveys\/152303468\/responses\/10045001533","custom_variables":{},"ip_address":"124.157.87.99","id":"10045001533","logic_path":{},"date_modified":"2018-06-01T01:40:56+00:00","response_status":"completed","custom_value":"","analyze_url":"https:\/\/www.surveymonkey.com\/analyze\/browse\/4OtedkkXVUVnpUzZSoqLOvwRWzq8lRh5k9HYy7mDlfo_3D?respondent_id=10045001533","pages":[{"id":"30306028","questions":[{"id":"84829501","answers":[{"is_correct":true,"choice_id":"651972985","score":1}]},{"id":"84829502","answers":[{"is_correct":false,"choice_id":"651972991","score":0}]},{"id":"84829503","answers":[{"is_correct":false,"choice_id":"651972993","score":0}]},{"id":"84829504","answers":[{"is_correct":false,"choice_id":"651972997","score":0},{"is_correct":false,"choice_id":"651972998","score":0},{"is_correct":true,"choice_id":"651973021","score":1}]},{"id":"84829505","answers":[{"is_correct":false,"choice_id":"651973002","score":0}]},{"id":"84829506","answers":[{"is_correct":false,"choice_id":"651973003","score":0}]},{"id":"84829507","answers":[{"is_correct":true,"choice_id":"651973005","score":1}]},{"id":"84829508","answers":[{"choice_id":"651973008"}]},{"id":"84829509","answers":[{"is_correct":true,"choice_id":"651973012","score":1}]},{"id":"84829510","answers":[{"is_correct":false,"choice_id":"651973016","score":0}]}]}],"page_path":[],"recipient_id":"","collector_id":"211982584","date_created":"2018-06-01T01:40:44+00:00","survey_id":"152303468","quiz_results":{"incorrect":5,"partially_correct":2,"total_questions":9,"total_score":12,"score":4,"correct":2},"collection_mode":"data_entry","edit_url":"https:\/\/www.surveymonkey.com\/r\/?sm=oI6Tq6SBVjBIllOJkFepoac_2FQutB5ev_2BeGd49Ws_2Bx2QHCQjlEDOtGgU7OtnpbWD6","metadata":{}}],"page":1,"links":{"self":"https:\/\/api.surveymonkey.net\/v3\/surveys\/152303468\/responses\/bulk?page=1&per_page=50"}}

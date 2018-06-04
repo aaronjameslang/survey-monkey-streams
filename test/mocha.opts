@@ -1,2 +1,3 @@
 --require=dotenv/config
+--require=replay
 --timeout=10000
