@@ -1,4 +1,4 @@
-const Reader = require("../dist/npm").Reader;
+const { Reader } = require("../dist/npm");
 const snap = require("./snap-events");
 
 const TOKEN = process.env.SURVEY_MONKEY_TOKEN;
