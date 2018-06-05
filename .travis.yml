@@ -1,10 +1,26 @@
 language: node_js
 node_js:
-  - "node"
-  - "lts/*"
-  - "6"
-  - "6.9"
-  - "6.0.0"
+- node
+- lts/*
+- '6'
+- '6.9'
+- 6.0.0
 matrix:
   allow_failures:
-    - node_js: "node"
+  - node_js: node
+jobs:
+  include:
+  - stage: deploy
+    node_js: lts/*
+    deploy:
+      access_key_id: AKIAI7V3C4OQSYHAR3NQ
+      bucket: aaronjameslang.com
+      local_dir: dist/doc
+      provider: s3
+      region: us-west-2
+      skip_cleanup: true
+      upload-dir: survey-monkey-streams
+      on:
+        branch: master
+      secret_access_key:
+        secure: grrwy2HevdKxdtZShTItx+zzW+Dg4hHKnZZBT2mJFsw5OTXG2wT86WHMbOrri1CRokLDpnoUOWMgzzofsWBrUNnYPeOnA2xGn/6ko541uBD7uJNLjXMGoobzPYT+asidfsCYyTjO29mydxSQtCDfHcksoplTC0pIP+0HQMor8FnF5sCEXvmv5cfPCq9WoQVkJ4euUxHLj5Eu8z2PuWWX+9+IYP0eR2OBXbrheJfgKsyB68kMB3gHJAD8FWK5cPWukpQg2um7Uxz1ictOSLHAqjw/Q59glsyHQImsMJjV2jRGTnfZGTmCgALG0V1c/cvsXYOWxB0UwJz8YyhB8puwfuhjUdfcjVIIuOB/SiZLF6jUVfGS3Fw9BEmQtX0NtnKjUscdqq4SAepP3jpzxm7CBYfRUXvSnz3y9tOu8YTrjV/oyhTxzDLj65rfNW/fKQu7J173rOxediXHI+Ed64BSgu1glP7rjH5D/HO+iVbgblN3Vrr+rKgXbeF/LPNEXv9+qSqqw+F5bhqIV6HEvp0LETG4ToHfIE9fjqSlNK6GI1nEAEA/xmOSmKJQ20UG7jNfpjCqtN3DAtB/tkbiFyGi0vrG8YkbJ6clqRrdfYzfE/Im2H/p9Ich0Ochn10248RI3GrHB6Fvjs/YZ+nVgtTPcWyqr0TW3YFuWAAl7+QWE+Q=
