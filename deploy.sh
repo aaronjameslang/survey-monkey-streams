@@ -32,5 +32,4 @@ test $VERSION_GIT = $VERSION_PKG
 test $VERSION_GIT = $VERSION_CHL
 
 cp package.json README.md ./dist/npm/
-# TODO
-#npm publish dist/npm
+npm publish dist/npm
