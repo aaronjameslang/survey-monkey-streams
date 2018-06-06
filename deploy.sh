@@ -22,3 +22,6 @@ aws s3 sync --region us-west-2 \
 aws s3 sync --region us-west-2 \
   coverage/lcov-report \
   s3://aaronjameslang.com/survey-monkey-streams/coverage
+
+cp package.json README.md ./dist/npm/
+# TODO npm publish
