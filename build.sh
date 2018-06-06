@@ -7,7 +7,7 @@ eslint           . --fix || true # Ignore errors until tests pass
 prettier '**/*.{js,json,ts}' --write
 barrelsby --directory src --delete # Generate index.ts
 tsc # Compile
-mocha # Test
+nyc --reporter=lcov mocha # Test with coverage
 tslint --project . # Lint ts
 eslint           . # lint js
 typedoc --out ./dist/doc --mode file
