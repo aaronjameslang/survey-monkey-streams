@@ -23,5 +23,14 @@ aws s3 sync --region us-west-2 \
   coverage/lcov-report \
   s3://aaronjameslang.com/survey-monkey-streams/coverage
 
+# If there's no version, exit
+VERSION_GIT=$(git describe --exact-match) || exit
+VERSION_PKG=$(node -e 'console.log(require("./package.json").version)')
+VERSION_CHL=$(< CHANGELOG.md sed -n 's/## \[\(.*\)\].*/\1/p' | head -1)
+
+test $VERSION_GIT = $VERSION_PKG
+test $VERSION_GIT = $VERSION_CHL
+
 cp package.json README.md ./dist/npm/
-# TODO npm publish
+# TODO
+#npm publish dist/npm
