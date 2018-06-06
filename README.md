@@ -2,7 +2,7 @@
 
 [![Build Status](http://travis-ci.org/aaronjameslang/survey-monkey-streams.svg?branch=master)](//travis-ci.org/aaronjameslang/survey-monkey-streams)
 [![Maintainability](http://api.codeclimate.com/v1/badges/8a959084f74b5a86c453/maintainability)](//codeclimate.com/github/aaronjameslang/survey-monkey-streams/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/8a959084f74b5a86c453/test_coverage)](https://codeclimate.com/github/aaronjameslang/survey-monkey-streams/test_coverage)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/8a959084f74b5a86c453/test_coverage)](//aaronjameslang.com/survey-monkey-streams/coverage)
 [![Known Vulnerabilities](http://snyk.io/test/github/aaronjameslang/survey-monkey-streams/badge.svg)](//snyk.io/test/github/aaronjameslang/survey-monkey-streams)
 
 [![npm version](https://badge.fury.io/js/survey-monkey-streams.svg)](//npmjs.com/package/survey-monkey-streams)
@@ -38,12 +38,12 @@ Stream the [Survey Monkey API](//developer.surveymonkey.com/api/v3/)
   })
   reader.pipe(myDbWriter)
 ```
-Read the [Documentation](//aaronjameslang.com/survey-monkey-streams) for more information (coming soon)
+Read the [Documentation](//aaronjameslang.com/survey-monkey-streams) for more information
 ## Links
 
   - Install from [NPM](//npmjs.com/package/survey-monkey-streams)
   - Read the code on [GitHub](//github.com/aaronjameslang/survey-monkey-streams)
-  - Read the [Documentation](//aaronjameslang.com/survey-monkey-streams) (coming soon)
+  - Read the [Documentation](//aaronjameslang.com/survey-monkey-streams)
   - Read about the [Node.js Stream API](//nodejs.org/api/stream.html)
   - Read about the [`request`](//npmjs.com/package/request) module
   - Consult the [Survey Monkey API Docs](//developer.surveymonkey.com/api/v3/)
