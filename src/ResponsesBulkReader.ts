@@ -9,11 +9,11 @@ class ResponsesBulkReader extends Reader {
   public constructor(
     surveyId: string,
     requestOptions: RequestOptions,
-    readableOptions: ReadableOptions = {}
+    readableOptions: ReadableOptions = {},
   ) {
     super(
       { ...requestOptions, url: `surveys/${surveyId}/responses/bulk` },
-      readableOptions
+      readableOptions,
     );
   }
 }

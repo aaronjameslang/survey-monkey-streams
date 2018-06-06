@@ -18,20 +18,20 @@ class SurveysResponsesBulkReader extends Readable {
   public constructor(
     surveyRequestOptions: RequestOptions,
     responseRequestOptions?: RequestOptions,
-    readableOptions: ReadableOptions = {}
+    readableOptions: ReadableOptions = {},
   ) {
     super({ ...readableOptions, objectMode: true });
     this.requestOptions = responseRequestOptions || surveyRequestOptions;
     this.readableOptions = readableOptions;
     this.surveysReader = this.initSurveysReader(
       surveyRequestOptions,
-      readableOptions
+      readableOptions,
     );
   }
 
   public initSurveysReader(
     requestOptions: RequestOptions,
-    readableOptions: ReadableOptions
+    readableOptions: ReadableOptions,
   ) {
     return new SurveysReader(requestOptions, readableOptions)
       .on("data", (survey: { id: string }) => {
@@ -40,14 +40,14 @@ class SurveysResponsesBulkReader extends Readable {
         this.emit("survey", survey);
         this.initResponsesBulkReader(survey.id);
       })
-      .on("page", page => {
+      .on("page", (page) => {
         this.surveyProgressTotal = page.total;
         this.emit("page", page, "survey");
       })
       .on("end", () => {
         this.surveysReaderEnded = true;
       })
-      .on("error", error => {
+      .on("error", (error) => {
         this.emit("error", error);
       })
       .pause();
@@ -60,9 +60,9 @@ class SurveysResponsesBulkReader extends Readable {
     this.responsesBulkReader = new ResponsesBulkReader(
       id,
       this.requestOptions,
-      this.readableOptions
+      this.readableOptions,
     )
-      .on("data", response => {
+      .on("data", (response) => {
         const more = this.push(response);
         if (this.responsesBulkReader && !more) {
           this.responsesBulkReader.pause();
@@ -70,16 +70,16 @@ class SurveysResponsesBulkReader extends Readable {
           throw new Error("Impossible");
         }
       })
-      .on("page", page => {
+      .on("page", (page) => {
         this.emit("page", page, "response");
       })
-      .on("progress", progress => {
+      .on("progress", (progress) => {
         this.emit("progress", {
           response: progress,
           survey: {
             count: this.surveyProgressCount,
-            total: this.surveyProgressTotal
-          }
+            total: this.surveyProgressTotal,
+          },
         });
       })
       .on("end", () => {
@@ -90,7 +90,7 @@ class SurveysResponsesBulkReader extends Readable {
           this.surveysReader.resume();
         }
       })
-      .on("error", error => {
+      .on("error", (error) => {
         this.emit("error", error);
       });
   }

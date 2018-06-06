@@ -8,7 +8,7 @@ class SurveysReader extends Reader {
    */
   public constructor(
     requestOptions: RequestOptions,
-    readableOptions: ReadableOptions = {}
+    readableOptions: ReadableOptions = {},
   ) {
     super({ ...requestOptions, url: "surveys" }, readableOptions);
   }

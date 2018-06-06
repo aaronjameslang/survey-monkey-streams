@@ -71,13 +71,13 @@ class Reader extends Readable {
    */
   public constructor(
     requestOptions: RequestOptions,
-    readableOptions: ReadableOptions = {}
+    readableOptions: ReadableOptions = {},
   ) {
     super({ ...readableOptions, objectMode: true });
     this.request = request.defaults({
       ...requestOptions,
       baseUrl: "https://api.surveymonkey.net/v3/",
-      json: true
+      json: true,
     });
   }
 
@@ -116,7 +116,7 @@ class Reader extends Readable {
         // Progress events count *buffered* data, which may not yet be read
         this.emit("progress", {
           count: this.count,
-          total: body.total
+          total: body.total,
         });
         if (!body.links.next) {
           this.push(null);
@@ -126,7 +126,7 @@ class Reader extends Readable {
         if (more) {
           this._read();
         }
-      }
+      },
     );
   }
 }

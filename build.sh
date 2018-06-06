@@ -2,9 +2,9 @@
 set -eux
 
 rm -rf dist # Clean
+prettier '**/*.{js,json,ts}' --write
 tslint --project . --fix || true # Ignore errors until tests pass
 eslint           . --fix || true # Ignore errors until tests pass
-prettier '**/*.{js,json,ts}' --write
 barrelsby --directory src --delete # Generate index.ts
 tsc # Compile
 nyc --reporter=lcov mocha # Test with coverage
