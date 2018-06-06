@@ -8,6 +8,8 @@ node_js:
 matrix:
   allow_failures:
   - node_js: node # https://github.com/assaf/node-replay/issues/155
+env:
+  - CC_TEST_REPORTER_ID=81850b3e9197e8acc53ec36a6d730d0215e5d34058cea551096c18efc5d665ce
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
