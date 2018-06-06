@@ -5,42 +5,14 @@ node_js:
 - '6'
 - '6.9'
 - 6.0.0
-matrix:
-  allow_failures:
-  - node_js: node # https://github.com/assaf/node-replay/issues/155
+matrix: { allow_failures: [{ node_js: node }] } # https://github.com/assaf/node-replay/issues/155
 jobs:
   include:
   - stage: deploy
+    on: { branch: master }
     node_js: lts/*
+    script: ./deploy.sh
     env:
-      - CC_TEST_REPORTER_ID=81850b3e9197e8acc53ec36a6d730d0215e5d34058cea551096c18efc5d665ce
-    before_script:
-      - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-      - chmod +x ./cc-test-reporter
-      - ./cc-test-reporter before-build
-    after_script:
-      - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-    deploy:
-      access_key_id: AKIAI7V3C4OQSYHAR3NQ
-      bucket: aaronjameslang.com
-      local_dir: dist/doc
-      provider: s3
-      region: us-west-2
-      skip_cleanup: true
-      upload-dir: survey-monkey-streams
-      on:
-        branch: master
-      secret_access_key:
-        secure: grrwy2HevdKxdtZShTItx+zzW+Dg4hHKnZZBT2mJFsw5OTXG2wT86WHMbOrri1CRokLDpnoUOWMgzzofsWBrUNnYPeOnA2xGn/6ko541uBD7uJNLjXMGoobzPYT+asidfsCYyTjO29mydxSQtCDfHcksoplTC0pIP+0HQMor8FnF5sCEXvmv5cfPCq9WoQVkJ4euUxHLj5Eu8z2PuWWX+9+IYP0eR2OBXbrheJfgKsyB68kMB3gHJAD8FWK5cPWukpQg2um7Uxz1ictOSLHAqjw/Q59glsyHQImsMJjV2jRGTnfZGTmCgALG0V1c/cvsXYOWxB0UwJz8YyhB8puwfuhjUdfcjVIIuOB/SiZLF6jUVfGS3Fw9BEmQtX0NtnKjUscdqq4SAepP3jpzxm7CBYfRUXvSnz3y9tOu8YTrjV/oyhTxzDLj65rfNW/fKQu7J173rOxediXHI+Ed64BSgu1glP7rjH5D/HO+iVbgblN3Vrr+rKgXbeF/LPNEXv9+qSqqw+F5bhqIV6HEvp0LETG4ToHfIE9fjqSlNK6GI1nEAEA/xmOSmKJQ20UG7jNfpjCqtN3DAtB/tkbiFyGi0vrG8YkbJ6clqRrdfYzfE/Im2H/p9Ich0Ochn10248RI3GrHB6Fvjs/YZ+nVgtTPcWyqr0TW3YFuWAAl7+QWE+Q=
-    deploy:
-      access_key_id: AKIAI7V3C4OQSYHAR3NQ
-      bucket: aaronjameslang.com
-      local_dir: coverage/lcov-report
-      provider: s3
-      region: us-west-2
-      skip_cleanup: true
-      upload-dir: survey-monkey-streams/coverage
-      on:
-        branch: master
-      secret_access_key:
-        secure: grrwy2HevdKxdtZShTItx+zzW+Dg4hHKnZZBT2mJFsw5OTXG2wT86WHMbOrri1CRokLDpnoUOWMgzzofsWBrUNnYPeOnA2xGn/6ko541uBD7uJNLjXMGoobzPYT+asidfsCYyTjO29mydxSQtCDfHcksoplTC0pIP+0HQMor8FnF5sCEXvmv5cfPCq9WoQVkJ4euUxHLj5Eu8z2PuWWX+9+IYP0eR2OBXbrheJfgKsyB68kMB3gHJAD8FWK5cPWukpQg2um7Uxz1ictOSLHAqjw/Q59glsyHQImsMJjV2jRGTnfZGTmCgALG0V1c/cvsXYOWxB0UwJz8YyhB8puwfuhjUdfcjVIIuOB/SiZLF6jUVfGS3Fw9BEmQtX0NtnKjUscdqq4SAepP3jpzxm7CBYfRUXvSnz3y9tOu8YTrjV/oyhTxzDLj65rfNW/fKQu7J173rOxediXHI+Ed64BSgu1glP7rjH5D/HO+iVbgblN3Vrr+rKgXbeF/LPNEXv9+qSqqw+F5bhqIV6HEvp0LETG4ToHfIE9fjqSlNK6GI1nEAEA/xmOSmKJQ20UG7jNfpjCqtN3DAtB/tkbiFyGi0vrG8YkbJ6clqRrdfYzfE/Im2H/p9Ich0Ochn10248RI3GrHB6Fvjs/YZ+nVgtTPcWyqr0TW3YFuWAAl7+QWE+Q=
+    - secure: CUiGvksEggpo8wxckkPOwsl866HAe8Y1OiP4zeutuZ/PWvn+9pbGz24liSGfwDRZ9bZ4ThQtdFp7uwBxiBaRSBXtlHv0lDNo2Xy3gVo+PTkbLc7phYlyGZ610GsleNv4UDYqpZvV9eWCnqJER+xw6FgYgzmcBXIv5S65uROUgXi7u/h5x3LFHHL2ziDXYSTvGsKGnzRPnluPrLB4iQJwXfDQLMAdl2oz3kXinlcfyYKo05X8AJ+psfnrk8liSBS29mtpy8hKbtnjm1vW4hddaAcBR5K6TIQRyvyk2Ol4AhUcP014XS6PwwcgHnBBgINHXJ4kKTO+U7GKFHDjMKA1pkp0eAHFrE9rBCgTRNk7JKFF0WXDcTXFHcxN8ZN9vv25RKVr7Nl/kmZJu1ga7mU8FsUVZQlm8+w/uBuCOvlVvmrDZAVmA74FtEdJ6TZN0tI8BUibZCX9JenBTCPkr5m3CJ5uo/FtNEz9Kg6Kue/gUX2Azv5j+wOy9DwlxklXf1melqMQUp3v9j4G/wGLhBcPs2hMVTZsqTuOb1WFuhd3n7StIhmUD1EzZX6uGQ7TgFiFbpc6Axnu8vo1EOppchKl7HGHFPgJ43cHiq4PVvRgZ6ASeixJNN/rVELt37lB3Ot6VaiINYlFyBmBVKfclvdLCdBzJmqvg0LQD0JLPtrd1KA= # CC_TEST_REPORTER_ID
+    - secure: i/RTtKp/dmaUxu81jEH6zajP5F4yuf0fAx+zDbcolwld5qgLdTeupAMcyDI+PaQGh/5Mj4JM1bdqi+T4Fh5Kd80r0xxPKEX4ecCUd52gLLgg3j5pwaompVTmcyuT+UzdBDPt0XfEpoT0YGsIvzbPj801TrXHnnvMBRoCFav8BmEzXnJf1l5+TCegzU7B7gn982HMfXHAcW/eU4q9OUU+EFqSkmx63WmwUp2/Ho8S0fi0BWALYiACtO6aR9WB8o/nvk3lhEalnLQHjr+AzYX9SR7IQ3g3S4l2YWyVu6CedgpGWJenrJbQ/HZ9JuNghYc5TyKZzRf24E+ODL8t7hWoQBKFkeAmh8bXj45vv87jZH0aHRoRpZYF37PdBuWxrBp+poab8cYCTQ+uzOvLYPEaoCGaMISOxetJucPhuVYseptGc3KocVwKu2OJVCZypVwqOCWqt1ZDA7F6MfBw7gq9l1HvVLyCugXptIgZ4OLq9XJ5RfDHAZEza0nmvPiYlvEY5AQGMEpvTIx6iU3znQjtgUU1vjHjvM342S024X19qzyiyvaKvmJqQbUlFvKN7hoDi9GvhIFshFCCu/Iyo/9j3vUvpOngPJX/KM5I5Z065CIc17W/0Sr9z8XKU90CKkt25WgquPYy50YBUyz0ROxZfdU7bdI6KY+veo62bOqgPzo= # AWS_ACCESS_KEY_ID
+    - secure: fFzh5NkrQkpoTGtn0Oq+kZPAVLCwkY3HI/livmnqkRfecYjiFTrocnl+1TXV5YOvFnbGjWS2n3boEw8Q8HXN8aiczO+VF55La73ooxoJx5sQoytXBHsF/QuqI2f/VAzvbY9qVyluCbdKrzh4S+/dFn3RK32uu3QASWJNyN4Au0LZw8/wzfjrZ+vutK4COtxF2PiSCUQJxVRYT0tDTkc7pqOBsZxnMxypTSCJrvuMjUDIQ/g8UwwZxS5WaOs16XAF6keBDZxBY9L8oNJ2E76o14mMRgdBaUwRUBtPPax/gIzZmVd1E6FH1fEWC1BAHOo8hf8T8OXgvkSPj3NEQBhO+KcN1kOHAO4xfwWQQTlXt6B5IsjnlrsZfibCAXav2fa0gqdeG9mbKdjR6Xwmg4iyr83HPLGcWzTFqLTBTT15pn9+JvIIgON0ObKASqErFwxoE2JG3m8IRw7nJrCZ7itpSBNQ3nUClqehzEO39DBR5qBXNpFxhXS4VhUVdT0xKD9BXjVLIYYp3r8m4jGdTDNBc7T7fXtl5JvaIxYnEV/5ePACqUNBSqHgSZEGPzj27BoYh4PtaLAMnblbGbLjSN0l9grgx//RbfDroZ/JZUzEw3AEydF+E1mLGm2tGFZcjOvJoG+eJ03ihdLwQCPtOjKxsw2/KmCVVWYygCIyQgGRCvw= # AWS_SECRET_ACCESS_KEY
