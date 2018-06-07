@@ -8,6 +8,7 @@
 [![npm version](https://badge.fury.io/js/survey-monkey-streams.svg)](//npmjs.com/package/survey-monkey-streams)
 [![node](https://img.shields.io/node/v/survey-monkey-streams.svg)](//travis-ci.org/aaronjameslang/survey-monkey-streams)
 [![Gitter](http://badges.gitter.im/aaronjameslang/survey-monkey-streams.svg)](//gitter.im/aaronjameslang/survey-monkey-streams)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](//commitizen.github.io/cz-cli/)
 
 Stream the [Survey Monkey API](//developer.surveymonkey.com/api/v3/)
 
