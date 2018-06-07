@@ -24,7 +24,7 @@ aws s3 sync --region us-west-2 \
   s3://aaronjameslang.com/survey-monkey-streams/coverage
 
 # If there's no version, exit
-VERSION_GIT=$(git describe --exact-match) || exit
+VERSION_GIT=$(git describe --exact-match) || exit 0
 VERSION_PKG=$(node -e 'console.log(require("./package.json").version)')
 VERSION_CHL=$(< CHANGELOG.md sed -n 's/## \[\(.*\)\].*/\1/p' | head -1)
 
