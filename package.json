@@ -21,6 +21,7 @@
     "survey"
   ],
   "scripts": {
+    "commitmsg": "commitlint -E GIT_PARAMS",
     "test": "./build.sh"
   },
   "dependencies": {
@@ -28,6 +29,9 @@
     "request": "^2.87.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "@commitlint/travis-cli": "^7.0.0",
     "@types/node": "^10.3.0",
     "barrelsby": "^1.0.1",
     "dotenv": "^5.0.1",
@@ -37,6 +41,7 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
+    "husky": "^0.14.3",
     "mocha": "^5.2.0",
     "nyc": "^12.0.2",
     "prettier": "^1.13.4",

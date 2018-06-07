@@ -6,6 +6,8 @@ test ! -z $AWS_ACCESS_KEY_ID
 test ! -z $AWS_SECRET_ACCESS_KEY
 test ! -z $CC_TEST_REPORTER_ID
 
+commitlint-travis
+
 curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
 chmod +x ./cc-test-reporter
 ./cc-test-reporter before-build
