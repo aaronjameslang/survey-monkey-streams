@@ -34,4 +34,5 @@ test $VERSION_GIT = $VERSION_PKG
 test $VERSION_GIT = $VERSION_CHL
 
 cp package.json README.md ./dist/npm/
+npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
 npm publish dist/npm
