@@ -5,12 +5,13 @@ set -eux
 # Only run once per commit
 # Run on all branches, may exit early on some
 
-test ! -z $TRAVIS
 test ! -z $AWS_ACCESS_KEY_ID
 test ! -z $AWS_SECRET_ACCESS_KEY
 test ! -z $CC_TEST_REPORTER_ID
 test ! -z $CONVENTIONAL_GITHUB_RELEASER_TOKEN
 test ! -z $NPM_TOKEN
+test ! -z $SONAR_TOKEN
+test ! -z $TRAVIS
 
 commitlint-travis
 
@@ -20,6 +21,10 @@ chmod +x ./cc-test-reporter
 ./build.sh
 # If build fails, this will never run, so can hard code 0
 ./cc-test-reporter after-build --exit-code 0
+
+curl -OL https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip
+unzip sonar-scanner*.zip
+sonar-scanner*/bin/sonar-scanner -Dsonar.login=$SONAR_TOKEN
 
 # If build is not triggered by tag, finish
 # Prevents master and latest tag both deploying

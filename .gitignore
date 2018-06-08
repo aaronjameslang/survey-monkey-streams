@@ -1,4 +1,5 @@
 .nyc_output
+.scannerwork
 coverage
 dist
 index.ts
