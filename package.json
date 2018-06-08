@@ -1,6 +1,6 @@
 {
   "name": "survey-monkey-streams",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Stream the Survey Monkey API",
   "homepage": "https://aaronjameslang.com/survey-monkey-streams",
   "author": "Aaron J. Lang <aaronjameslang@googlemail.com>",
