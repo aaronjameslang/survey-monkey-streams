@@ -21,10 +21,10 @@
     "survey"
   ],
   "scripts": {
-    "changelog": "standard-changelog",
     "commit": "git-cz",
     "commitmsg": "commitlint -E GIT_PARAMS",
-    "test": "./build.sh"
+    "test": "./build.sh",
+    "v": "standard-version"
   },
   "dependencies": {
     "@types/request": "^2.47.0",
@@ -50,7 +50,7 @@
     "prettier": "^1.13.4",
     "replay": "^2.3.0",
     "snap-shot-it": "^5.0.1",
-    "standard-changelog": "^2.0.0",
+    "standard-version": "^4.4.0",
     "tslint": "^5.10.0",
     "typedoc": "^0.11.1",
     "typescript": "^2.8.4"
