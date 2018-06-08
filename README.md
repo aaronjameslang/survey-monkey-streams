@@ -63,3 +63,11 @@ Bug? Feature request? Not sure? [Open an issue!](//github.com/aaronjameslang/sur
 I wrote this to fix a problem I was facing, so it might need stretching to meet your needs. Notably, there is no `Writable` yet.
 
 Pull requests welcome, but please get in touch first. I don't want to waste your time 😁
+
+## Maintenance
+
+Release like:
+```shell
+  npm run v
+  git push --tags && git push
+```
