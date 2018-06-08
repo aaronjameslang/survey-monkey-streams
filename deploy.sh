@@ -21,8 +21,8 @@ pip install awscli --upgrade --user
 
 # If there's no version, exit
 VERSION_GIT=$(git describe --exact-match) || exit 0
-VERSION_PKG=$(node -e 'console.log(require("./package.json").version)')
-VERSION_CHL=$(< CHANGELOG.md sed -n 's/## \[\(.*\)\].*/\1/p' | head -1)
+VERSION_PKG=v$(node -e 'console.log(require("./package.json").version)')
+VERSION_CHL=v$(< CHANGELOG.md sed -n 's/## \[\(.*\)\].*/\1/p' | head -1)
 
 test $VERSION_GIT = $VERSION_PKG
 test $VERSION_GIT = $VERSION_CHL
