@@ -22,6 +22,7 @@
   ],
   "scripts": {
     "commitmsg": "commitlint -E GIT_PARAMS",
+    "postchangelog": "$EDITOR CHANGELOG.md",
     "test": "./build.sh",
     "v": "standard-version"
   },
