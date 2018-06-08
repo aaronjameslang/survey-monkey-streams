@@ -7,7 +7,7 @@
 [![Known Vulnerabilities](http://snyk.io/test/github/aaronjameslang/survey-monkey-streams/badge.svg)](//snyk.io/test/github/aaronjameslang/survey-monkey-streams)
 [![Greenkeeper badge](https://badges.greenkeeper.io/aaronjameslang/survey-monkey-streams.svg)](https://greenkeeper.io/)
 
-[Stream](//nodejs.org/api/stream.html) the [Survey Monkey API](//developer.surveymonkey.com/api/v3/) 
+[Stream](//nodejs.org/api/stream.html) the [Survey Monkey API](//developer.surveymonkey.com/api/v3/)
 
 ## Why?
 
