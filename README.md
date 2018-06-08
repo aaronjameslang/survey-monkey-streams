@@ -45,9 +45,10 @@ Read the [Documentation](//aaronjameslang.com/survey-monkey-streams) for more in
   - Install from [NPM](//npmjs.com/package/survey-monkey-streams)
   - Read the code on [GitHub](//github.com/aaronjameslang/survey-monkey-streams)
   - Read the [Documentation](//aaronjameslang.com/survey-monkey-streams)
+  - Read the [Change Log](//github.com/aaronjameslang/survey-monkey-streams/blob/master/CHANGELOG.md)
   - Read about the [Node.js Stream API](//nodejs.org/api/stream.html)
   - Read about the [`request`](//npmjs.com/package/request) module
-  - Consult the [Survey Monkey API Docs](//developer.surveymonkey.com/api/v3/)
+  - Read about the [Survey Monkey API](//developer.surveymonkey.com/api/v3/)
 
 ## Design Decisions
 
