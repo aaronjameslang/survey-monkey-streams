@@ -1,6 +1,10 @@
 #! /bin/sh
 set -eux
 
+# Only run on CI (travis)
+# Only run once per commit
+# Run on all branches, may exit early on some
+
 test ! -z $TRAVIS
 test ! -z $AWS_ACCESS_KEY_ID
 test ! -z $AWS_SECRET_ACCESS_KEY
@@ -17,15 +21,18 @@ chmod +x ./cc-test-reporter
 # If build fails, this will never run, so can hard code 0
 ./cc-test-reporter after-build --exit-code 0
 
-pip install awscli --upgrade --user
+# If build is not triggered by tag, finish
+# Prevents master and latest tag both deploying
+test ! -z $TRAVIS_TAG || exit 0
 
-# If there's no version, exit
-VERSION_GIT=$(git describe --exact-match) || exit 0
+VERSION_GIT=$(git describe --exact-match)
 VERSION_PKG=v$(node -e 'console.log(require("./package.json").version)')
 VERSION_CHL=v$(< CHANGELOG.md sed -n 's/## \[\(.*\)\].*/\1/p' | head -1)
 
 test $VERSION_GIT = $VERSION_PKG
 test $VERSION_GIT = $VERSION_CHL
+
+pip install awscli --upgrade --user
 
 aws s3 sync --region us-west-2 \
   dist/doc \

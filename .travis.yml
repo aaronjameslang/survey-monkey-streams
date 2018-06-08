@@ -9,9 +9,8 @@ matrix: { allow_failures: [{ node_js: node }] } # https://github.com/assaf/node-
 jobs:
   include:
   - stage: deploy
-    on: { branch: master }
     node_js: lts/*
-    script: ./deploy.sh
+    script: ./.travis.sh
     env:
     - secure: CUiGvksEggpo8wxckkPOwsl866HAe8Y1OiP4zeutuZ/PWvn+9pbGz24liSGfwDRZ9bZ4ThQtdFp7uwBxiBaRSBXtlHv0lDNo2Xy3gVo+PTkbLc7phYlyGZ610GsleNv4UDYqpZvV9eWCnqJER+xw6FgYgzmcBXIv5S65uROUgXi7u/h5x3LFHHL2ziDXYSTvGsKGnzRPnluPrLB4iQJwXfDQLMAdl2oz3kXinlcfyYKo05X8AJ+psfnrk8liSBS29mtpy8hKbtnjm1vW4hddaAcBR5K6TIQRyvyk2Ol4AhUcP014XS6PwwcgHnBBgINHXJ4kKTO+U7GKFHDjMKA1pkp0eAHFrE9rBCgTRNk7JKFF0WXDcTXFHcxN8ZN9vv25RKVr7Nl/kmZJu1ga7mU8FsUVZQlm8+w/uBuCOvlVvmrDZAVmA74FtEdJ6TZN0tI8BUibZCX9JenBTCPkr5m3CJ5uo/FtNEz9Kg6Kue/gUX2Azv5j+wOy9DwlxklXf1melqMQUp3v9j4G/wGLhBcPs2hMVTZsqTuOb1WFuhd3n7StIhmUD1EzZX6uGQ7TgFiFbpc6Axnu8vo1EOppchKl7HGHFPgJ43cHiq4PVvRgZ6ASeixJNN/rVELt37lB3Ot6VaiINYlFyBmBVKfclvdLCdBzJmqvg0LQD0JLPtrd1KA= # CC_TEST_REPORTER_ID
     - secure: i/RTtKp/dmaUxu81jEH6zajP5F4yuf0fAx+zDbcolwld5qgLdTeupAMcyDI+PaQGh/5Mj4JM1bdqi+T4Fh5Kd80r0xxPKEX4ecCUd52gLLgg3j5pwaompVTmcyuT+UzdBDPt0XfEpoT0YGsIvzbPj801TrXHnnvMBRoCFav8BmEzXnJf1l5+TCegzU7B7gn982HMfXHAcW/eU4q9OUU+EFqSkmx63WmwUp2/Ho8S0fi0BWALYiACtO6aR9WB8o/nvk3lhEalnLQHjr+AzYX9SR7IQ3g3S4l2YWyVu6CedgpGWJenrJbQ/HZ9JuNghYc5TyKZzRf24E+ODL8t7hWoQBKFkeAmh8bXj45vv87jZH0aHRoRpZYF37PdBuWxrBp+poab8cYCTQ+uzOvLYPEaoCGaMISOxetJucPhuVYseptGc3KocVwKu2OJVCZypVwqOCWqt1ZDA7F6MfBw7gq9l1HvVLyCugXptIgZ4OLq9XJ5RfDHAZEza0nmvPiYlvEY5AQGMEpvTIx6iU3znQjtgUU1vjHjvM342S024X19qzyiyvaKvmJqQbUlFvKN7hoDi9GvhIFshFCCu/Iyo/9j3vUvpOngPJX/KM5I5Z065CIc17W/0Sr9z8XKU90CKkt25WgquPYy50YBUyz0ROxZfdU7bdI6KY+veo62bOqgPzo= # AWS_ACCESS_KEY_ID
