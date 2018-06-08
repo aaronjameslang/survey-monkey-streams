@@ -69,5 +69,5 @@ Pull requests welcome, but please get in touch first. I don't want to waste your
 Release like:
 ```shell
   npm run v
-  git push --tags && git push
+  git push --follow-tags
 ```
