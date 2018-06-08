@@ -22,7 +22,6 @@
   ],
   "scripts": {
     "commitmsg": "commitlint -E GIT_PARAMS",
-    "postchangelog": "$EDITOR CHANGELOG.md",
     "test": "./build.sh",
     "v": "standard-version"
   },
@@ -58,6 +57,11 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "$EDITOR CHANGELOG.md"
     }
   }
 }
