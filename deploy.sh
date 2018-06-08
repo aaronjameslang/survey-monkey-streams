@@ -5,6 +5,8 @@ test ! -z $TRAVIS
 test ! -z $AWS_ACCESS_KEY_ID
 test ! -z $AWS_SECRET_ACCESS_KEY
 test ! -z $CC_TEST_REPORTER_ID
+test ! -z $CONVENTIONAL_GITHUB_RELEASER_TOKEN
+test ! -z $NPM_TOKEN
 
 commitlint-travis
 
@@ -17,14 +19,6 @@ chmod +x ./cc-test-reporter
 
 pip install awscli --upgrade --user
 
-aws s3 sync --region us-west-2 \
-  dist/doc \
-  s3://aaronjameslang.com/survey-monkey-streams
-
-aws s3 sync --region us-west-2 \
-  coverage/lcov-report \
-  s3://aaronjameslang.com/survey-monkey-streams/coverage
-
 # If there's no version, exit
 VERSION_GIT=$(git describe --exact-match) || exit 0
 VERSION_PKG=$(node -e 'console.log(require("./package.json").version)')
@@ -33,6 +27,16 @@ VERSION_CHL=$(< CHANGELOG.md sed -n 's/## \[\(.*\)\].*/\1/p' | head -1)
 test $VERSION_GIT = $VERSION_PKG
 test $VERSION_GIT = $VERSION_CHL
 
-cp package.json README.md ./dist/npm/
+aws s3 sync --region us-west-2 \
+  dist/doc \
+  s3://aaronjameslang.com/survey-monkey-streams
+
+aws s3 sync --region us-west-2 \
+  coverage/lcov-report \
+  s3://aaronjameslang.com/survey-monkey-streams/coverage
+
+conventional-github-releaser
+
+cp package.json README.md CHANGELOG.md ./dist/npm/
 npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
 npm publish dist/npm
