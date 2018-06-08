@@ -5,6 +5,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aaronjameslang/survey-monkey-streams/badges/quality-score.png)](//scrutinizer-ci.com/g/aaronjameslang/survey-monkey-streams)
 [![SonarQube](https://sonarcloud.io/api/project_badges/measure?project=survey-monkey-streams&metric=alert_status)](//sonarcloud.io/dashboard?id=survey-monkey-streams)
 [![Known Vulnerabilities](http://snyk.io/test/github/aaronjameslang/survey-monkey-streams/badge.svg)](//snyk.io/test/github/aaronjameslang/survey-monkey-streams)
+[![Greenkeeper badge](https://badges.greenkeeper.io/aaronjameslang/survey-monkey-streams.svg)](https://greenkeeper.io/)
 
 [Stream](//nodejs.org/api/stream.html) the [Survey Monkey API](//developer.surveymonkey.com/api/v3/)
 
