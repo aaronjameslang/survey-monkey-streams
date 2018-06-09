@@ -30,13 +30,6 @@ sonar-scanner*/bin/sonar-scanner -Dsonar.login=$SONAR_TOKEN
 # Prevents master and latest tag both deploying
 test ! -z $TRAVIS_TAG || exit 0
 
-VERSION_GIT=$(git describe --exact-match)
-VERSION_PKG=v$(node -e 'console.log(require("./package.json").version)')
-VERSION_CHL=v$(< CHANGELOG.md sed -n 's/## \[\(.*\)\].*/\1/p' | head -1)
-
-test $VERSION_GIT = $VERSION_PKG
-test $VERSION_GIT = $VERSION_CHL
-
 pip install awscli --upgrade --user
 
 aws s3 sync --region us-west-2 \
