@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/aaronjameslang/survey-monkey-streams/compare/v1.0.0...v1.0.1) (2018-06-09)
+
+
+### Bug Fixes
+
+* 🐛 don't parse changelog, trust ([993874e](https://github.com/aaronjameslang/survey-monkey-streams/commit/993874e))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/aaronjameslang/survey-monkey-streams/compare/v0.1.14...v1.0.0) (2018-06-09)
 
