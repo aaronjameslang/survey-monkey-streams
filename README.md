@@ -47,7 +47,7 @@ Check the [Documentation](//aaronjameslang.com/survey-monkey-streams) [for](//no
 
 Rather than define a new API, this module chooses to expose the APIs of the underlying technologies, i.e. [`request`](//npmjs.com/package/request) and the [Node.js Stream API](//nodejs.org/api/stream.html). Common use cases are more verbose than they might otherwise be, but minimal tampering means less bugs, documentation and frustration.
 
-## Contribution [![Gitter](http://badges.gitter.im/aaronjameslang/survey-monkey-streams.svg)](//gitter.im/aaronjameslang/survey-monkey-streams) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](//commitizen.github.io/cz-cli/) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-brightgreen.svg)](https://conventionalcommits.org)
+## Contribution [![Gitter](http://badges.gitter.im/aaronjameslang/survey-monkey-streams.svg)](//gitter.im/aaronjameslang) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](//commitizen.github.io/cz-cli/) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-brightgreen.svg)](https://conventionalcommits.org)
 
 Question? Bug? Feature request? Not sure? [Open an issue!](//github.com/aaronjameslang/survey-monkey-streams/issues/new)
 
