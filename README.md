@@ -3,7 +3,6 @@
 [![Maintainability](http://api.codeclimate.com/v1/badges/8a959084f74b5a86c453/maintainability)](//codeclimate.com/github/aaronjameslang/survey-monkey-streams/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/8a959084f74b5a86c453/test_coverage)](//aaronjameslang.com/survey-monkey-streams/coverage)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aaronjameslang/survey-monkey-streams/badges/quality-score.png)](//scrutinizer-ci.com/g/aaronjameslang/survey-monkey-streams)
-[![SonarQube](https://sonarcloud.io/api/project_badges/measure?project=survey-monkey-streams&metric=alert_status)](//sonarcloud.io/dashboard?id=survey-monkey-streams)
 [![Known Vulnerabilities](http://snyk.io/test/github/aaronjameslang/survey-monkey-streams/badge.svg)](//snyk.io/test/github/aaronjameslang/survey-monkey-streams)
 [![Greenkeeper badge](https://badges.greenkeeper.io/aaronjameslang/survey-monkey-streams.svg)](https://greenkeeper.io/)
 
