@@ -33,7 +33,7 @@
   "devDependencies": {
     "@commitlint/cli": "^7.3.2",
     "@commitlint/config-conventional": "^7.3.1",
-    "@commitlint/travis-cli": "^7.3.2",
+    "@commitlint/travis-cli": "^7.6.0",
     "@types/node": "^11.9.0",
     "barrelsby": "^1.0.1",
     "conventional-github-releaser": "^3.1.2",
